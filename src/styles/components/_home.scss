@@ -1,94 +1,250 @@
-
+@keyframes rotate {
+    from { transform: rotate(360deg); }
+    to { transform: rotate(0); }
+}
+@keyframes scaleBigger{
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+@keyframes fadeIn {
+    0% {
+        transform: scale(1);
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    50%{
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
 .home{
-    padding: 2rem;
     box-shadow: 2px,2px,2px,4px rgba($color: #000000, $alpha: 0.5);
     text-align: center;
     width: 80vw;
     margin: auto;
 
-    h2{
-        margin: 1rem;
-        color: $main-color-black;
-        padding-bottom: 1rem;
-        border-bottom: $main-border;
-    }
-
-    .todoContainer{
-        width: 50vw;
-        border: 1px solid $main-color-blue;
-        margin: 3rem auto;
-        border-radius: 4px;
-    }
-
-    .todoForm{
-        display: flex;
+    .me{
+        width: 60vw;
+        margin: 0 auto;
+        margin-top: -5rem;
+        height: calc(100vh - 7.5rem);
         align-items: center;
-        justify-content: space-between;
-        width: 50vw;
-        margin: auto;
-        position: relative;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
 
-        &>input{
-            direction: ltr;
-            width: 75%;
-            padding: .5rem;
-            outline: none;
+        h1{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
 
-            &::placeholder{
-                text-align: center;
+            .meTitle{
+                text-shadow: -1px -9px 2px $second-color;
+                font-size: 15rem;
+                // animation: fadeIn ease-out .5s;
+                animation-iteration-count: 1;
+                animation-fill-mode: forwards;
+                transition:all .3s linear; 
+                   
+                &:first-of-type{
+                    animation-delay: .5s;
+                }
+                &:last-of-type{
+                    margin-top: -2rem;
+                    animation-delay: 1s;
+                }
+                &:hover{
+                    transform: scale(1.1) !important;
+                }
+            }
+
+            .container{
+                display: block;
+                width: 100%;
+                height: 2850px;
+                position: relative;
+            }
+            
+            .circular-text{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 200px;
+                height: 200px;
+                position: fixed; 
+                top: calc(100vh - 200px);
+                right: 0;
+            }
+            
+            .text{
+                font-family: "Fira Code";
+                font-weight: 700;
+                font-size: 17px;
+                text-transform: uppercase;
+                color: darken($color: $second-color, $amount: 20%) ;
+            }
+            
+            .arrow{
+                width: 50px;
+                height: 50px;
+                position: absolute;
+                margin-top: 1rem;
+            }
+            
+            .arrow svg{
+                display: block;
+                width: 100%;
+                height: 100%;
+                fill:darken($color: $second-color, $amount: 20%) ;
             }
         }
-        .addTaskButton{
-            width: 20%;
+
+        &>span{
+            color: $color-text;
+            font-weight: 600;
+            transition: .2s ease;
+            transform-origin: 0%;
+            // transform: skew(5deg) rotateZ(5deg);
         }
     }
 
-   
-
-    .task{
+    .works{
+        margin: 10rem auto;
+        width: 70vw;
+        // height: 50vh;
         display: flex;
+        flex-direction: column;
         align-items: center;
-        justify-content: space-around;
-        margin: auto;
-        padding: .5rem;
-        border-bottom: $main-border;
-        direction: ltr;
+        justify-content: center;
+        transition:all .3s linear; 
 
-        .content{
-            width: 50%;
-            text-align: end;
-            padding-right: 1rem;
-            border-right: $main-border;
+        &>div{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            padding-top: .5rem;
+            padding-bottom: .5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid $secondary-color;
+
+            &>span{
+                font-size: 4rem;
+            }
+
+            &>img{
+                position: absolute;
+                z-index: -1;
+                width: 400px;
+                height: 350px;
+                top: 0;
+                left: 0;
+                pointer-events: none;
+                opacity: 0;
+                transition: all 1s;
+            }
+            .work-desc{
+                z-index: -2;
+            }
+
+            &:hover{
+                overflow: visible;
+                color: $main-color-hover;
+                cursor: pointer;
+
+                &>img{
+                    opacity: 1;
+                    transition: all .1s;
+                }
+            }
         }
-        .contentDone{
-            width: 50%;
-            text-align: end;
-            padding-right: 1rem;
-            border-right: $main-border;
-            opacity: .7;
-            text-decoration: line-through;
+        &>div:last-of-type{
+            border-bottom: none;
         }
-        .checkBox{
-            width:10%;
-            padding-right: 1rem;
-            border-right: $main-border;
-        }
-     
     }
-}   
-.submitButton,.addTaskButton{
-    border: none;
-    border-radius: 4px;
-    width: 20%;
-    padding: .5rem;
-    cursor: pointer;
-    background-color: $main-color-blue;
-    color: white;
-}
 
-.errorMessage{
-    color: red;
-    position: absolute;
-    top: 2.5rem;
-    font-size: .85rem;
+    .contact{
+        width: 70vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 10rem;
+        margin-bottom: 2rem;
+        position: relative;
+        top: 2rem;
+        
+        h1{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            margin-bottom: 0.5rem;
+        }
+        .email{
+            display: inline-block;
+            border-bottom: 1.5px solid $color-text;
+            font-size: 1.8rem;
+            margin-top: .2rem;
+
+            &>a{
+                text-decoration: none;
+                color: $color-text;
+
+                &:hover{
+                    cursor: pointer;
+                    color: $main-color-hover;
+                }
+            }
+        }
+        .socialMedia{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 1rem;
+
+            .phoneNumber{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 3rem;
+                span{
+                    padding-right: 1rem;
+                }
+            }
+            .social{
+                margin-top: 1rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 2.5rem;
+                span{
+                    padding-right: .5rem;
+                    padding-left: .5rem;
+                }
+                a{
+                    text-decoration: none;
+                    color: $color-text;
+                    &:hover{
+                        cursor: pointer;
+                        color: $main-color-hover;
+                    }
+                }
+            }
+        }
+    }
+
 }
