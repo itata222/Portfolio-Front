@@ -1,16 +1,13 @@
 import React from 'react'
-import logo from '../../images/logo.jpeg'
 
 const HeaderLeft = () => {
     return (
         <div className="headerLeft">
-            <div className="logo">
-                <img src={logo} alt="logo"/>
-            </div>
             <div className="siteHeadlines">
                 <div onClick={()=>{
                     document.querySelector('.me').scrollIntoView({ 
-                        behavior: 'smooth' 
+                        behavior: 'smooth' ,
+                        block: 'center'
                       });
                 }}>Me</div>
                 <div onClick={()=>{
@@ -23,7 +20,8 @@ const HeaderLeft = () => {
                 <div onClick={()=>{
                     console.log(document.querySelector('.contact'))
                     document.querySelector('.contact').scrollIntoView({ 
-                        behavior: 'smooth' 
+                        behavior: 'smooth',
+                        block: 'center'
                       });
                 }}>Contact</div>
             </div>

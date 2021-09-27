@@ -49,7 +49,7 @@ const MyWorks = () => {
     
     return (
         <div className="works" ref={wholeWorks}> 
-            <div className="work-covid"
+            <div className={covidHover?"work-covid text-flicker-in-glow":"work-covid"}
             onMouseOver={()=>{setCovidHover(true)}}
             onMouseLeave={()=>{setCovidHover(false)}} onClick={()=>{
                 window.open('https://github.com/itata222/Covid19_Proj',
@@ -60,7 +60,7 @@ const MyWorks = () => {
                 <span className="work-desc">Vanilla</span>
                 <img className={covidHover?"showHover":""}  ref={Covid19Photo} src={covidLogo} alt="Covid19 Site"/>
             </div>
-            <div className="work-yad2" 
+            <div className={yad2BHover?"work-yad2 text-flicker-in-glow":"work-yad2"} 
             onMouseOver={()=>{setyad2BHover(true)}}
             onMouseLeave={()=>{setyad2BHover(false)}} onClick={()=>{
                 window.open('https://github.com/itata222/Yad2_Proj-Back',
@@ -71,7 +71,7 @@ const MyWorks = () => {
                 <span className="work-desc">Back</span>
                 <img  className={yad2BHover?"showHover":""} ref={Yad2PhotoBack} src={yad2Logo} alt="Yad2 Site" />
             </div>
-            <div className="work-yad2" 
+            <div className={yad2FHover?"work-yad2 text-flicker-in-glow":"work-yad2"} 
             onMouseOver={()=>{setyad2FHover(true)}}
             onMouseLeave={()=>{setyad2FHover(false)}} onClick={()=>{
                 window.open('https://github.com/itata222/Yad2_Proj-Front',
@@ -82,7 +82,7 @@ const MyWorks = () => {
                 <span className="work-desc">Front</span>
                 <img className={yad2FHover?"showHover":""} ref={Yad2PhotoFront} src={yad2Logo} alt="Yad2 Site" />
             </div>
-            <div className="work-studentManagment" 
+            <div className={studentBHover?"work-studentManagment text-flicker-in-glow":"work-studentManagment"} 
             onMouseOver={()=>{setstudentBHover(true)}}
             onMouseLeave={()=>{setstudentBHover(false)}} onClick={()=>{
                 window.open('https://github.com/itata222/StudentManagmentSystem_Proj-Back',
@@ -93,7 +93,7 @@ const MyWorks = () => {
                 <span className="work-desc">Back</span>
                 <img className={studentBHover?"showHover":""} ref={StudentPhotoBack} src={studentManagmentLogo} alt="studentManagment Site" />
             </div>
-            <div className="work-studentManagment" 
+            <div className={studentFHover?"work-studentManagment text-flicker-in-glow":"work-studentManagment"} 
             onMouseOver={()=>{setstudentFHover(true)}}
             onMouseLeave={()=>{setstudentFHover(false)}} onClick={()=>{
                 window.open('https://github.com/itata222/StudentManagmentSystem_Proj-Front',
@@ -104,7 +104,7 @@ const MyWorks = () => {
                 <span className="work-desc">Front</span>
                 <img className={studentFHover?"showHover":""} ref={StudentPhotoFront} src={studentManagmentLogo} alt="studentManagment Site" />
             </div>
-            <div className="work-films" 
+            <div className={moviesBHover?"work-films text-flicker-in-glow":"work-films"} 
             onMouseOver={()=>{setmoviesBHover(true)}}
             onMouseLeave={()=>{setmoviesBHover(false)}} onClick={()=>{
                 window.open('https://github.com/itata222/Movies_Proj-Back',
@@ -115,7 +115,7 @@ const MyWorks = () => {
                 <span className="work-desc">Back</span>
                 <img className={moviesBHover?"showHover":""} ref={MoviesPhotoBack} src={filmsLogo} alt="Films Site" />
             </div>
-            <div className="work-films" 
+            <div className={moviesFHover?"work-films text-flicker-in-glow":"work-films"} 
             onMouseOver={()=>{setmoviesFHover(true)}}
             onMouseLeave={()=>{setmoviesFHover(false)}} onClick={()=>{
                 window.open('https://github.com/itata222/Movies_Proj-Front',

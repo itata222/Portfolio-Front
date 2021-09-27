@@ -28,7 +28,7 @@ const Me = () => {
                 myMe2.current.style.transform=`translateY(-${window.scrollY * 0.25}px)`
             }
             if(myArrow.current!=null){
-                myArrow.current.style.opacity=`${1-window.scrollY * 0.001}`
+                myArrow.current.style.opacity=`${1-window.scrollY * 0.002}`
             }
             lastScrollTop = st <= 0 ? 0 : st;
         })
