@@ -1,11 +1,10 @@
 import React from 'react';
 
-const Modal = ({setShowModal,text}) => {
+const Modal = ({component}) => {
     return (
         <div className="modal">
             <div className='modal-content'>
-                <h4>{text}</h4>
-                <button onClick={()=>setShowModal(false)}>Great</button>
+                {component}
             </div>
         </div>
     )

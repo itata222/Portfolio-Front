@@ -36,13 +36,13 @@ const MyWorks = () => {
             if(e!=null){
                 const x=e.offsetX-200;
                 const y=e.offsetY-150;
-                Covid19Photo.current.style.transform=`translate(${x}px, ${y}px)`;
-                Yad2PhotoFront.current.style.transform=`translate(${x}px, ${y}px)`;
-                Yad2PhotoBack.current.style.transform=`translate(${x}px, ${y}px)`;
-                StudentPhotoFront.current.style.transform=`translate(${x}px, ${y}px)`;
-                StudentPhotoBack.current.style.transform=`translate(${x}px, ${y}px)`;
-                MoviesPhotoFront.current.style.transform=`translate(${x}px, ${y}px)`;
-                MoviesPhotoBack.current.style.transform=`translate(${x}px, ${y}px)`;
+                if(Covid19Photo.current!=null)Covid19Photo.current.style.transform=`translate(${x}px, ${y}px)`;
+                if(Yad2PhotoFront.current!=null)Yad2PhotoFront.current.style.transform=`translate(${x}px, ${y}px)`;
+                if(Yad2PhotoBack.current!=null)Yad2PhotoBack.current.style.transform=`translate(${x}px, ${y}px)`;
+                if(StudentPhotoFront.current!=null)StudentPhotoFront.current.style.transform=`translate(${x}px, ${y}px)`;
+                if(StudentPhotoBack.current!=null)StudentPhotoBack.current.style.transform=`translate(${x}px, ${y}px)`;
+                if(MoviesPhotoFront.current!=null)MoviesPhotoFront.current.style.transform=`translate(${x}px, ${y}px)`;
+                if(MoviesPhotoBack.current!=null)MoviesPhotoBack.current.style.transform=`translate(${x}px, ${y}px)`;
             }
         })    
     },[])

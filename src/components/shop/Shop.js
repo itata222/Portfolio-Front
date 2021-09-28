@@ -1,10 +1,20 @@
 import React from 'react'
+import HeaderShop from '../header/HeaderShop'
 
 const Shop = () => {
+    
     return (
-        <div className="shop">
-            
-        </div>
+        <>
+        <HeaderShop />
+            <div className="shopPage">
+                <h1>
+                    Products
+                </h1>
+                {
+
+                }
+            </div>
+        </>
     )
 }
 

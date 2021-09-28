@@ -674,7 +674,7 @@ function resizeCanvas () {
 
 
 return (
-    <div className="gl"></div>
+    <div className="background-webgl"></div>
     )
 }
 

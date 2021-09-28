@@ -1,0 +1,44 @@
+.login{
+
+
+    .loginForm{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 80%;
+
+            div{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 1rem;
+
+                label{
+                    width: 5rem;
+                }
+            }
+        }
+
+        &>span{
+            text-decoration: underline;
+            align-self: flex-start;
+
+            &:hover{
+                cursor: pointer;
+
+            }
+        }
+    }
+}
+
+.errorMessage{
+    color: red;
+    font-weight: 500;
+}

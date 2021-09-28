@@ -15,22 +15,37 @@
     z-index: 2;
 }
 
-.headerLeft{
+.headerHome,.headerShop{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 30%;
+    // width: 30%;
 
     .siteHeadlines{
         display: flex;
         align-items: center;
         justify-content: space-around;
-        width: 60%;
+        // width: 60%;
 
         &>div{
             font-size: 1.15rem;
             text-decoration: none;
             color: $second-color;
+            padding-left: 1rem;
+            padding-right: 1rem;
+
+            &:hover{
+                color: $main-color-hover;
+                cursor: pointer;
+            }
+        }
+        .shop{
+            font-size: 1.35rem;
+            font-weight: 500;
+            text-decoration: none;
+            color: $second-color;
+            margin-left: 1.5rem;
+            margin-right: .5rem;
 
             &:hover{
                 color: $main-color-hover;
@@ -51,3 +66,8 @@
         }
     }
 }
+
+.active-header{
+    color: $main-color-hover !important;
+}
+
