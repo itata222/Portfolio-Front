@@ -62,9 +62,10 @@ canvas {
       display: flex;
       flex-direction: column;
       align-items: center;
+      color: $second-color;
 
       .meTitle {
-        text-shadow: -1px -9px 2px $second-color;
+        text-shadow: -1px -9px 2px $main-color-hover;
         font-size: 10rem;
         animation-iteration-count: 1;
         animation-fill-mode: forwards;
@@ -106,7 +107,7 @@ canvas {
         font-weight: 700;
         font-size: 17px;
         text-transform: uppercase;
-        color: darken($color: $second-color, $amount: 20%);
+        color: darken($color: $color-text, $amount: 20%);
       }
 
       .arrow {
@@ -126,7 +127,7 @@ canvas {
 
     & > span {
       color: $color-text;
-      text-shadow: -1px -2px 2px $second-color;
+      text-shadow: -1px -2px 2px $main-color-hover;
       font-weight: 600;
       transition: 0.2s ease;
       transform-origin: 0%;
@@ -158,7 +159,7 @@ canvas {
       & > span {
         font-size: 2.5rem;
         color: $color-text;
-        text-shadow: 1px 1px 20px $second-color;
+        text-shadow: 1px 1px 20px $main-color-hover;
       }
 
       & > img {
@@ -178,7 +179,7 @@ canvas {
 
       &:hover {
         overflow: visible;
-        color: $main-color-hover;
+        color: darken($color: $main-color-hover, $amount: 20%);
         cursor: pointer;
 
         & > img {
@@ -227,7 +228,7 @@ canvas {
         letter-spacing: 3px;
         &:hover {
           cursor: pointer;
-          color: $main-color-hover;
+          color: darken($color: $main-color-hover, $amount: 20%);
         }
       }
       &:hover {
@@ -268,7 +269,7 @@ canvas {
           text-shadow: -1px 1px 1px $main-color-hover;
           &:hover {
             cursor: pointer;
-            color: $main-color-hover;
+            color: darken($color: $main-color-hover, $amount: 20%);
           }
         }
       }
@@ -435,7 +436,7 @@ canvas {
         align-items: center;
 
         .meTitle {
-          text-shadow: -1px -9px 2px $second-color;
+          text-shadow: -1px -9px 2px $main-color-hover;
           font-size: 15rem;
           // animation: fadeIn ease-out .5s;
           animation-iteration-count: 1;
@@ -498,7 +499,7 @@ canvas {
 
       & > span {
         color: $color-text;
-        text-shadow: -1px -2px 2px $second-color;
+        text-shadow: -1px -2px 2px $main-color-hover;
         font-weight: 600;
         transition: 0.2s ease;
         transform-origin: 0%;
@@ -508,7 +509,7 @@ canvas {
 
     .works {
       width: 75vw;
-      margin-left: unset;
+      margin-left: 5.5rem;
 
       & > div {
         & > span {
