@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,800;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Stick+No+Bills:wght@200;300;400;500;600&display=swap');
+
+*{
+    box-sizing: border-box;
+    font-family: 'Stick No Bills', sans-serif;
+    direction: ltr;
+}
+
+body{
+    margin: 0;
+    background-color: #FCFBFA;
+
+    &::-webkit-scrollbar{
+        display: none;
+        scroll-behavior:smooth;
+    }
+}
+html{
+    scroll-behavior:smooth;
+}
+
+.scrollBar{
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 11px;
+    height: 100vh;
+    transform-origin: center right;
+    transition: transform 0.3s, opacity 0.3s;
+    z-index: 4;
+    scroll-behavior: smooth;
+}
+.scrollBar-content{
+    height: 85px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: black;
+    opacity: 0.5;
+    width: 7px;
+    border-radius: 10px;
+    margin: 2px;
+    cursor: -webkit-grab;
+    cursor: grab;
+    transition: opacity .2s;
+}
