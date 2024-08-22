@@ -16,10 +16,23 @@
   padding-left: 2rem;
   position: sticky;
   top: 0;
-  z-index: 2;
+  z-index: 12;
 
   & a.active {
     color: $main-color-hover !important;
+  }
+}
+
+.backHomeHeader {
+  font-size: 1.15rem;
+  text-decoration: none;
+  color: $second-color;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  &:hover {
+    color: $main-color-hover;
+    cursor: pointer;
   }
 }
 

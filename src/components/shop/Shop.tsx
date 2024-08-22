@@ -1,21 +1,16 @@
-import React from 'react'
-import HeaderShop from '../header/HeaderShop'
+import React from "react";
+import HeaderShop from "../header/HeaderShop";
 
 const Shop = () => {
-    
-    return (
-        <>
-        <HeaderShop />
-            <div className="shopPage">
-                <h1>
-                    Products
-                </h1>
-                {
+  return (
+    <>
+      {/* <HeaderShop /> */}
+      <div className="shopPage">
+        <h1>Products</h1>
+        {}
+      </div>
+    </>
+  );
+};
 
-                }
-            </div>
-        </>
-    )
-}
-
-export default Shop
+export default Shop;

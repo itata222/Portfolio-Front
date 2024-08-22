@@ -1,44 +1,52 @@
-.login{
+.login {
+  height: calc(100vh - 12rem);
 
+  .loginForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-    .loginForm{
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 80%;
+
+      div {
         display: flex;
-        flex-direction: column;
         align-items: center;
         justify-content: center;
+        margin-bottom: 1rem;
 
-        form{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            width: 80%;
-
-            div{
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin-bottom: 1rem;
-
-                label{
-                    width: 5rem;
-                }
-            }
+        label {
+          width: 5rem;
         }
-
-        &>span{
-            text-decoration: underline;
-            align-self: flex-start;
-
-            &:hover{
-                cursor: pointer;
-
-            }
-        }
+      }
     }
+
+    & > span {
+      text-decoration: underline;
+      align-self: flex-start;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
 }
 
-.errorMessage{
-    color: red;
-    font-weight: 500;
+.errorMessage {
+  color: red;
+  font-weight: 500;
+}
+
+@media (min-width: 600px) {
+  .login {
+    form {
+      width: 90%;
+      margin: auto;
+    }
+  }
 }

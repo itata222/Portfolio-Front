@@ -53,7 +53,7 @@ const LoginForm = () => {
         )}
         <button>Go</button>
       </form>
-      <span onClick={() => navigate("/home")}>Back To Home</span>
+      <span onClick={() => navigate("/")}>Back To Home</span>
     </div>
   );
 };

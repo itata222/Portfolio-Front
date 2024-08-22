@@ -12,6 +12,7 @@ import AdminRoute from "./AdminRoute";
 import UserRoute from "./UserRoute";
 import Page404 from "../components/Page404";
 import DeviceContextProvider from "../contexts/deviceContext";
+import Header from "../components/header/Header";
 
 const AppRoute = () => {
   return (
@@ -20,6 +21,7 @@ const AppRoute = () => {
         <DeviceContextProvider>
           <BackGroundWebGL />
           <ScrollBar />
+          <Header />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route index element={<Home />} />
@@ -39,7 +41,8 @@ const AppRoute = () => {
                 </AdminRoute>
               }
             />
-            <Route path="*" element={<Page404 />} />
+            <Route path="/error" element={<Page404 />} />
+            <Route path="*" element={<Navigate to="/error" replace />} />
           </Routes>
           <Footer />
         </DeviceContextProvider>
