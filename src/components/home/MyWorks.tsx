@@ -1,150 +1,64 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import covidLogo from "../../assets/coronavirus.jpg";
 import yad2Logo from "../../assets/yad2.png";
 import studentManagmentLogo from "../../assets/student-management-system.png";
 import filmsLogo from "../../assets/films.jpg";
+import { useDeviceData } from "../../customHooks/deviceDataHook";
+import WorkItem from "./WorkItem";
 
 const MyWorks = () => {
-  const Covid19Photo = useRef(null);
-  const Yad2Photo = useRef(null);
-  const StudentPhoto = useRef(null);
-  const MoviesPhoto = useRef(null);
   const wholeWorks = useRef(null);
-  const [covidHover, setCovidHover] = useState(false);
-  const [yad2Hover, setYad2Hover] = useState(false);
-  const [studentHover, setStudentHover] = useState(false);
-  const [moviesHover, setMoviesHover] = useState(false);
+  const { isMobile } = useDeviceData();
 
   useEffect(() => {
-    window.addEventListener("scroll", function (e) {
-      if (wholeWorks.current != null) {
+    window.addEventListener("scroll", () => {
+      if (wholeWorks.current) {
         wholeWorks.current.style.transform = `translateY(${
           window.scrollY * 0.05
         }px)`;
       }
     });
-  });
-
-  useEffect(() => {
-    if (window.innerWidth > 500)
-      document.addEventListener("mousemove", (e) => {
-        if (e != null) {
-          const x = e.offsetX - 200;
-          const y = e.offsetY - 150;
-          if (Covid19Photo.current != null)
-            Covid19Photo.current.style.transform = `translate(${x}px, ${y}px)`;
-          if (Yad2Photo.current != null)
-            Yad2Photo.current.style.transform = `translate(${x}px, ${y}px)`;
-          if (StudentPhoto.current != null)
-            StudentPhoto.current.style.transform = `translate(${x}px, ${y}px)`;
-          if (MoviesPhoto.current != null)
-            MoviesPhoto.current.style.transform = `translate(${x}px, ${y}px)`;
-        }
-      });
   }, []);
+
+  const works = [
+    {
+      title: "Covid 19 Control Panel",
+      description: "Vanilla",
+      logo: covidLogo,
+      link: "https://github.com/itata222/Covid19_Proj",
+    },
+    {
+      title: "Yad 2 COPY Site",
+      description: "Front",
+      logo: yad2Logo,
+      link: "https://github.com/itata222/Yad2_Proj-Front",
+    },
+    {
+      title: "Student Management Application",
+      description: "Back",
+      logo: studentManagmentLogo,
+      link: "https://github.com/itata222/StudentManagmentSystem_Proj-Back",
+    },
+    {
+      title: "Online Movies Site",
+      description: "Front",
+      logo: filmsLogo,
+      link: "https://github.com/itata222/Movies_Proj-Front",
+    },
+  ];
 
   return (
     <div className="works" ref={wholeWorks}>
-      <div
-        className="work-covid"
-        onMouseOver={() => {
-          setCovidHover(true);
-        }}
-        onMouseLeave={() => {
-          setCovidHover(false);
-        }}
-        onClick={() => {
-          window.open(
-            "https://github.com/itata222/Covid19_Proj",
-            "Covid_WindowName",
-            "menubar=yes,location=yes,resizable=yes,scrollbars=yes,status=yes"
-          );
-        }}
-      >
-        <span>Covid 19 Control Panel</span>
-        <span className="work-desc">Vanilla</span>
-        <img
-          className={covidHover ? "showHover" : ""}
-          ref={Covid19Photo}
-          src={covidLogo}
-          alt="Covid19 Site"
+      {works.map((work, index) => (
+        <WorkItem
+          key={index}
+          title={work.title}
+          description={work.description}
+          logo={work.logo}
+          link={work.link}
+          isMobile={isMobile}
         />
-      </div>
-      <div
-        className="work-yad2"
-        onMouseOver={() => {
-          setYad2Hover(true);
-        }}
-        onMouseLeave={() => {
-          setYad2Hover(false);
-        }}
-        onClick={() => {
-          window.open(
-            "https://github.com/itata222/Yad2_Proj-Front",
-            "Covid_WindowName",
-            "menubar=yes,location=yes,resizable=yes,scrollbars=yes,status=yes"
-          );
-        }}
-      >
-        <span>Yad 2 COPY Site</span>
-        <span className="work-desc">Front</span>
-        <img
-          className={yad2Hover ? "showHover" : ""}
-          ref={Yad2Photo}
-          src={yad2Logo}
-          alt="Yad2 Site"
-        />
-      </div>
-      <div
-        className="work-studentManagment"
-        onMouseOver={() => {
-          setStudentHover(true);
-        }}
-        onMouseLeave={() => {
-          setStudentHover(false);
-        }}
-        onClick={() => {
-          window.open(
-            "https://github.com/itata222/StudentManagmentSystem_Proj-Back",
-            "Covid_WindowName",
-            "menubar=yes,location=yes,resizable=yes,scrollbars=yes,status=yes"
-          );
-        }}
-      >
-        <span>Student Managment Application</span>
-        <span className="work-desc">Back</span>
-        <img
-          className={studentHover ? "showHover" : ""}
-          ref={StudentPhoto}
-          src={studentManagmentLogo}
-          alt="studentManagment Site"
-        />
-      </div>
-      <div
-        className="work-films"
-        onMouseOver={() => {
-          setMoviesHover(true);
-        }}
-        onMouseLeave={() => {
-          setMoviesHover(false);
-        }}
-        onClick={() => {
-          window.open(
-            "https://github.com/itata222/Movies_Proj-Front",
-            "Covid_WindowName",
-            "menubar=yes,location=yes,resizable=yes,scrollbars=yes,status=yes"
-          );
-        }}
-      >
-        <span>Online Movies Site</span>
-        <span className="work-desc">Front</span>
-        <img
-          className={moviesHover ? "showHover" : ""}
-          ref={MoviesPhoto}
-          src={filmsLogo}
-          alt="Films Site"
-        />
-      </div>
+      ))}
     </div>
   );
 };

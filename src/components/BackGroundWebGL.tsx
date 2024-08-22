@@ -4,6 +4,9 @@ const BackGroundWebGL = () => {
   useEffect(() => {
     // console.clear();
 
+    const vw = window.innerWidth;
+    const vh = window.innerHeight;
+
     const instancedQuadVertexShader = `#version 300 es
 
     /*
@@ -169,12 +172,12 @@ const BackGroundWebGL = () => {
 
       /* Recreate our projection matrix with new viewport dimensions */
       const projectionMatrix = new Float32Array([
-        2 / window.innerWidth,
+        2 / vw,
         0,
         0,
         0,
         0,
-        -2 / window.innerHeight,
+        -2 / vh,
         0,
         0,
         0,
@@ -188,14 +191,14 @@ const BackGroundWebGL = () => {
       ]);
       const vertexArray = new Float32Array([
         0,
-        window.innerHeight,
-        window.innerWidth,
-        window.innerHeight,
-        window.innerWidth,
+        vh,
+        vw,
+        vh,
+        vw,
         0,
         0,
-        window.innerHeight,
-        window.innerWidth,
+        vh,
+        vw,
         0,
         0,
         0,
@@ -262,8 +265,8 @@ const BackGroundWebGL = () => {
       /*
       Generate a random X and Y position
       */
-      const randX = Math.random() * window.innerWidth * 2;
-      const randY = Math.random() * window.innerHeight * 2;
+      const randX = Math.random() * vw * 2;
+      const randY = Math.random() * vh * 2;
       /*
      Set the correct X and Y for each pair in our array
      */
@@ -299,10 +302,10 @@ const BackGroundWebGL = () => {
       vertexShaderSource: fullscreenQuadVertexShader,
       fragmentShaderSource: fullscreenQuadFragmentShader,
       isInstanced: false,
-      width: window.innerWidth,
-      height: window.innerHeight,
-      offsetX: window.innerWidth / 2,
-      offsetY: window.innerHeight / 2,
+      width: vw,
+      height: vh,
+      offsetX: vw / 2,
+      offsetY: vh / 2,
     } as any);
     fullscreenQuadVertexBuffer = vertexBuffer;
     /*
@@ -582,12 +585,12 @@ const BackGroundWebGL = () => {
   https://webglfundamentals.org/webgl/lessons/webgl-2d-matrices.html
   */
       const projectionMatrix = new Float32Array([
-        2 / window.innerWidth,
+        2 / vw,
         0,
         0,
         0,
         0,
-        -2 / window.innerHeight,
+        -2 / vh,
         0,
         0,
         0,
@@ -768,10 +771,10 @@ const BackGroundWebGL = () => {
       We also need to limit it because it can really slow our program. Modern iPhones have devicePixelRatios of 3. This means rendering 9x more pixels each frame!
       More info: https://webglfundamentals.org/webgl/lessons/webgl-resizing-the-canvas.html 
       */
-      canvas.width = window.innerWidth * dpr;
-      canvas.height = window.innerHeight * dpr;
-      canvas.style.width = `${window.innerWidth}px`;
-      canvas.style.height = `${window.innerHeight}px`;
+      canvas.width = vw * dpr;
+      canvas.height = vh * dpr;
+      canvas.style.width = `${vw}px`;
+      canvas.style.height = `${vh}px`;
     }
     // Cleanup on unmount
     return () => {

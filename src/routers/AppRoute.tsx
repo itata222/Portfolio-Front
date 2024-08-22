@@ -11,35 +11,38 @@ import LoginPage from "../components/login/Login";
 import AdminRoute from "./AdminRoute";
 import UserRoute from "./UserRoute";
 import Page404 from "../components/Page404";
+import DeviceContextProvider from "../contexts/deviceContext";
 
 const AppRoute = () => {
   return (
     <BrowserRouter>
       <LoginContextProvider>
-        <BackGroundWebGL />
-        <ScrollBar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route index element={<Home />} />
-          <Route
-            path="/login"
-            element={
-              <UserRoute>
-                <LoginPage />
-              </UserRoute>
-            }
-          />
-          <Route
-            path="/shop"
-            element={
-              <AdminRoute>
-                <Shop />
-              </AdminRoute>
-            }
-          />
-          <Route path="*" element={<Page404 />} />
-        </Routes>
-        <Footer />
+        <DeviceContextProvider>
+          <BackGroundWebGL />
+          <ScrollBar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route index element={<Home />} />
+            <Route
+              path="/login"
+              element={
+                <UserRoute>
+                  <LoginPage />
+                </UserRoute>
+              }
+            />
+            <Route
+              path="/shop"
+              element={
+                <AdminRoute>
+                  <Shop />
+                </AdminRoute>
+              }
+            />
+            <Route path="*" element={<Page404 />} />
+          </Routes>
+          <Footer />
+        </DeviceContextProvider>
       </LoginContextProvider>
     </BrowserRouter>
   );

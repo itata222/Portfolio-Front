@@ -4,9 +4,10 @@ import Contact from "./Contact";
 import Me from "./Me";
 import MyWorks from "./MyWorks";
 import Circular from "../Circular";
+import { useDeviceData } from "../../customHooks/deviceDataHook";
 
 const Home = () => {
-  const vw = window.innerWidth;
+  const { isDesktop } = useDeviceData();
 
   return (
     <>
@@ -15,7 +16,7 @@ const Home = () => {
         <Me />
         <MyWorks />
         <Contact />
-        {vw > 1000 && <Circular />}
+        {isDesktop && <Circular />}
       </div>
     </>
   );
