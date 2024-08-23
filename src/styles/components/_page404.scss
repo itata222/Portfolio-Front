@@ -3,13 +3,14 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: calc(100vh - 15rem);
+  height: calc(100vh - 13.5rem);
   text-align: center;
-  margin: auto;
+  margin-top: -2rem;
+  // margin: 2rem auto;
   //   background-color: #f0f0f0;
 
   h1 {
-    font-size: 15rem;
+    font-size: 12rem;
     color: $main-color-hover;
     margin: 0;
   }
@@ -20,9 +21,31 @@
     align-items: center;
 
     span {
-      font-size: 3rem;
+      font-size: 2rem;
       color: $second-color;
       margin: 5px 0;
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .page404 {
+    h1 {
+      font-size: 15rem;
+      color: $main-color-hover;
+      margin: 0;
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      span {
+        font-size: 3rem;
+        color: $second-color;
+        margin: 5px 0;
+      }
     }
   }
 }

@@ -37,7 +37,7 @@ canvas {
   width: 100vw;
   height: 100vh;
   z-index: -1;
-  background: $main-color-hover;
+  // background: $main-color-hover;
 }
 
 .dont-show {
@@ -101,7 +101,8 @@ canvas {
   }
 
   .works {
-    margin: 4rem auto;
+    padding: 4rem 0;
+    margin: 0 auto;
     width: 80%;
     // height: 50vh;
     display: flex;
@@ -109,7 +110,7 @@ canvas {
     align-items: center;
     justify-content: center;
     transition: all 0.3s linear;
-    padding-bottom: 2rem;
+    // padding-bottom: 2rem;
 
     & > div {
       position: relative;
