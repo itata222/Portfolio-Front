@@ -21,28 +21,28 @@ html {
   }
 }
 
-.scrollBar {
-  position: fixed;
-  right: 0;
-  top: 0;
-  width: 11px;
-  height: 100vh;
-  transform-origin: center right;
-  transition: transform 0.3s, opacity 0.3s;
-  z-index: 4;
-  scroll-behavior: smooth;
-}
-.scrollBar-content {
-  height: 300px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  background-color: black;
-  opacity: 0.5;
-  width: 7px;
-  border-radius: 10px;
-  margin: 2px;
-  cursor: -webkit-grab;
-  cursor: grab;
-  transition: opacity 0.2s;
-}
+// .scrollBar {
+//   position: fixed;
+//   right: 0;
+//   top: 0;
+//   width: 11px;
+//   height: 100vh;
+//   transform-origin: center right;
+//   transition: transform 0.3s, opacity 0.3s;
+//   z-index: 4;
+//   scroll-behavior: smooth;
+// }
+// .scrollBar-content {
+//   height: 300px;
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+//   background-color: black;
+//   opacity: 0.5;
+//   width: 7px;
+//   border-radius: 10px;
+//   margin: 2px;
+//   cursor: -webkit-grab;
+//   cursor: grab;
+//   transition: opacity 0.2s;
+// }

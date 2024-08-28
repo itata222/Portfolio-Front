@@ -20,7 +20,6 @@ const AppRoute = () => {
       <LoginContextProvider>
         <DeviceContextProvider>
           <BackGroundWebGL />
-          <ScrollBar />
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />

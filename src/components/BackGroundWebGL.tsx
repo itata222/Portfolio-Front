@@ -137,7 +137,7 @@ const BackGroundWebGL = () => {
       */
       cutoffThreshold += 0.015;
       cutoff = step(cutoffThreshold, inputColor.a);
-      vec4 fillColor = vec4(0.06, 0.94,0.8, 0.1);
+      vec4 fillColor = vec4(0.46, 0.74,0.9, 0.1);
       outputColor = mix(
         outputColor,
         fillColor,
