@@ -42,7 +42,7 @@ const Me = () => {
     <div className="me">
       <h1>
         <span ref={myMe1} className="meTitle">
-          Hi! I'm
+          Hi! I'mmm
         </span>
         <span ref={myMe2} className="meTitle">
           Itamar
